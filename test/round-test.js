@@ -7,7 +7,7 @@ const { createDeck } = require('../src/deck.js');
 const { createRound } = require('../src/round.js');
 const { takeTurn } = require('../src/round.js');
 const { calculatePercentCorrect } = require('../src/round.js');
-const { showRoundResult } = require('../src/round.js');
+const { endRound } = require('../src/round.js');
 
 
 describe('round', function() {
@@ -150,6 +150,6 @@ describe('round', function() {
     round.turns = 12;
     round.incorrectGuesses = ['answer1', 'answer2', 'answer3'];
 
-    expect(showRoundResult(round)).to.equal('** Round over! ** You answered 75% of the questions correctly!');
+    expect(endRound(round)).to.equal('** Round over! ** You answered 75% of the questions correctly!');
   });
 });
